@@ -1,0 +1,112 @@
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<div id="header">
+
+		<div>
+			<a ui-sref="inicio"><img class="logo" src="images/logoArgenta.png" width="513" height="84" alt="" title=""></a>
+			<a ui-sref="inicio"><img  src="images/800px-Eq_it-na_pizza-margherita_sep2005_sml-2.png" width="332" height="205" alt="" title=""></a>
+
+		<div ng-if="user.rol == 'ADMINISTRADOR'" >
+			<ul class="navigation">
+			    <li><a ui-sref="menu.ABM">Alta Usuario</a></li>
+    			<li><a ui-sref="menu.AltaLocal">Alta Local</a></li>
+   				 <li><a ui-sref="menu.Grillas">Grilla Usuarios</a></li>
+    			 <li><a ui-sref="menu.GrillaLocal" >Grilla Locales</a></li>
+				<li><a ng-click="Deslogueo()" >Desloguear</a></li>
+			</div>
+		<div ng-if="user.rol == 'CLIENTE'" >
+		<ul class="navigation">
+   		 <li><a ui-sref="menu.GrillaLocal">Locales</a></li>
+   		 <li><a ui-sref="menu.GrillaPromociones">Promociones</a>    </li>
+    	<li><a ui-sref="menu.altaPedidos" >Alta Pedido</a></li>
+        <li><a ng-Click="Deslogueo()">Desloguearse</a></li>
+
+		</div>
+<div ng-if="user.rol == 'EMPLEADO'" >
+<ul class="navigation">
+    <li><a ui-sref="menu.Registro">Alta Cliente</a></li>
+    <li><a ui-sref="menu.AltaProducto">Alta Producto</a></li>
+    <li><a ui-sref="menu.AltaPromocion">Alta Promocion</a></li>
+    <li><a ui-sref="menu.altaPedidos">Alta Pedidos</a></li>
+        <li><a ui-sref="menu.Grillas">Grilla Clientes </a></li>
+    <li><a ui-sref="menu.grillaPedidos" >Grilla Pedido</a></li>
+    <li><a ng-Click="Deslogueo()">Desloguearse</a></li>
+</div>
+
+<div ng-if="user.rol == 'ENCARGADO'" >
+<ul class="navigation">
+    <li><a ui-sref="menu.Registro">Alta Cliente y Empleado</a></li>
+    <li><a ui-sref="menu.AltaProducto">Alta Producto</a></li>
+    <li><a ui-sref="menu.AltaPromocion">Alta Promocion</a></li>
+    <li><a ui-sref="menu.altaPedidos">Alta Pedido</a></li>
+    <li><a ui-sref="menu.Grillas">Grilla Clientes y Empleados</a></li>
+    <li><a ng-Click="Deslogueo()">Desloguearse</a></li>
+
+</div>
+			
+			<div ng-if="user.rol == null">
+			<ul class="navigation">
+				<li>
+					<a class="active" ui-sref="inicio">Inicio</a>
+				</li>
+				<li>
+					<a ui-sref="menu.carta">Menu</a>
+				</li>
+				
+				<li>
+					<a ui-sref="menu.login">Ingresar</a>
+				</li>
+
+			</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="body">
+		<div class="featured"> <a ui-sref="menu.carta"><width="960" height="590" alt=""></a>
+			<h2>Bienvenido a Argenta SRL  {{user.usuario}} !! </h2>
+			<p>
+				Se encuetra usted en la página web de la Pizzería Argenta.
+				Aquí podrá encontrar una descripción de nuestros locales, productos y servicios para que pueda degustar nuestras deliciosas pizzas, tartas y raciones tanto en nuestros establecimientos como en su casa, gracias al sevicio a domicilio de que disponemos en cada localidad.
+				¡Bienvenidos y que disfruten!
+			</p>
+			<ul>
+				<li>
+					<a ui-sref="menu.tartas"><img src="images/pizza.jpg" width="284" height="214" alt=""></a>
+				</li>
+				<li>
+					<a ui-sref="menu.empanadas"><img src="images/tartayempanadas.jpg" alt="" width="284" height="214"></a>
+				</li>
+				<li>
+					<a ui-sref="menu.postres"><img src="images/shakess.jpg" alt="" width="284" height="214"></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="footer">
+		<div>
+			<ul>
+				<li class="first">
+					<h2>Delivery</h2>
+					<h3>Cel 0-123-456-789</h3>
+					<ul>
+						<li>
+							<a href="http://www.freewebsitetemplates.com/go/facebook" class="facebook"></a>
+						</li>
+						<li>
+							<a href="http://www.freewebsitetemplates.com/go/twitter" class="twitter"></a>
+						</li>
+						<li>
+							<a href="http://www.freewebsitetemplates.com/go/googleplus" class="googleplus"></a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a ui-sref="inicio"><img class="logo" src="images/logoArgentaSinFoto.png" alt=""></a>
+					<ul class="navigation">
+				
+			
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>

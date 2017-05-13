@@ -1,0 +1,88 @@
+
+ <link href="css/estilos-log.css" rel="stylesheet" type="text/css" media="all" />
+
+	<title>Ingresar - Argenta</title>
+	<meta charset="utf-8">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+
+	<div id="header">
+		<div>
+			<a ui-sref="inicio"><img class="logo" src="images/logoArgenta.png" width="513" height="84" alt="" title=""></a>
+			<a ui-sref="inicio"><img  src="images/800px-Eq_it-na_pizza-margherita_sep2005_sml-2.png" width="332" height="205" alt="" title=""></a>
+			<div ng-if="user.rol == null" >
+			<ul class="navigation">
+				<li>
+					<a class="active" ui-sref="inicio">Inicio</a>
+				</li>
+			
+				<li>
+					<a ui-sref="menu.carta">Menu</a>
+				</li>
+				
+				<li>
+					<a ui-sref="menu.login">Ingresar</a>
+				</li>
+
+			</ul>
+			</div>
+		</div>
+	</div>
+	
+		<div ng-if= "tipologin != 'CLIENTE'">
+
+		<div class="login-form">  
+			<div class="agile-row">   
+				<div class="login-agileits-top"> 
+					<form onsubmit="return false" method="post"> 
+						<div class="input-row">
+							<input type="text" class="user" value="admin" name="nombre" placeholder="Usuario" ng-model="usuario.nombre_usuario" required=""/>
+							<input type="password" value="admin" class="password" name="Password" placeholder="Clave" ng-model="usuario.pass_usuario" required=""/>
+
+						</div>
+						<br>		
+						<center><input type="submit" ng-click="IniciarSeccion()" value="INGRESAR">
+
+
+
+         <input type="submit" id="registro clientes" class="button" ng-Click="RegistroClientes()" name="Ingreso" value="REGISTRO CLIENTES" /></center><BR><BR>
+        </form>
+        <center> 
+        <input type="submit"  class="button" ng-Click="Usuarios('ADMINISTRADOR')" name="USUARIOS" value="ADMINISTRADOR" />
+        <input type="submit"  class="button" ng-Click="Usuarios('CLIENTE')" name="USUARIOS" value="CLIENTE" />
+         <input type="submit"  class="button" ng-Click="Usuarios('EMPLEADO')" name="USUARIOS" value="EMPLEADO" />
+         <input type="submit"  class="button" ng-Click="Usuarios('ENCARGADO')" name="USUARIOS" value="ENCARGADO" />
+			
+		</center>
+
+					</form>  
+				</div> 
+			</div>  
+		</div>
+	</div>
+
+</div>
+		<div class="sidebar">
+		</div>
+	</div>
+	<div id="footer">
+		<div>
+			<ul>
+				<li class="first">
+					<h2>Delivery</h2>
+					<h3>Cel 0-123-456-789</h3>
+					<ul>
+						<li>
+							<a href="http://www.freewebsitetemplates.com/go/facebook" class="facebook"></a>
+						</li>
+						<li>
+							<a href="http://www.freewebsitetemplates.com/go/twitter" class="twitter"></a>
+						</li>
+						<li>
+							<a href="http://www.freewebsitetemplates.com/go/googleplus" class="googleplus"></a>
+						</li>
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>

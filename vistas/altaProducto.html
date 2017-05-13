@@ -1,0 +1,115 @@
+<link href="css/estilos-log.css" rel="stylesheet" type="text/css" media="all" />
+
+  <title>Ingresar - Argenta</title>
+  <meta charset="utf-8">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+
+  <div id="header">
+    <div>
+      <a ui-sref="inicio"><img class="logo" src="images/logoArgenta.png" width="513" height="84" alt="" title=""></a>
+      <a ui-sref="inicio"><img  src="images/800px-Eq_it-na_pizza-margherita_sep2005_sml-2.png" width="332" height="205" alt="" title=""></a>
+
+<div ng-if="user.rol == 'EMPLEADO'" >
+      <ul class="navigation">
+  <ul>
+    <li><a ui-sref="menu.Registro">Alta Cliente</a></li>
+    <li><a ui-sref="menu.AltaProducto">Alta Producto</a></li>
+    <li><a ui-sref="menu.AltaPromocion">Alta Promocion</a></li>
+    <li><a ui-sref="menu.altaPedidos">Alta Pedido</a></li>
+    <li><a ui-sref="menu.Grillas">Grilla Clientes </a></li>
+    <li><a ui-sref="menu.grillaPedidos" >Grilla Pedidos</a></li>
+    <li><a ng-Click="Deslogueo()">Desloguearse</a></li>
+
+  </ul>
+</nav>
+</div>
+
+<div ng-if="user.rol == 'ENCARGADO'" >
+      <ul class="navigation">
+  <ul>
+    <li><a ui-sref="menu.Registro">Alta Clientes y Empleados</a></li>
+    <li><a ui-sref="menu.AltaProducto">Alta Producto</a></li>
+    <li><a ui-sref="menu.AltaPromocion">Alta Promocion</a></li>
+    <li><a ui-sref="menu.altaPedidos">Alta Pedido</a></li>
+    <li><a ui-sref="menu.Grillas">Grilla Clientes y Empleados</a></li>
+    <li><a ng-Click="Deslogueo()">Desloguearse</a></li>
+     </div>
+    </div>
+    
+  </div>
+
+<div class="login-form">  
+      <div class="agile-row">   
+        <div class="login-agileits-top"> 
+          <form onsubmit="return false" method="post"> 
+            <div class="input-row">
+       
+          <input type="text" value="" placeholder="Ingrese descripcion del producto" ng-model="producto.descripcion_pizza" required />
+        </p>
+         <p>
+         <input type="text" value="" placeholder="Ingrese precio del producto" ng-model="producto.precio_pizza" required />
+        </p>
+         <p>
+                   <input type="file" nv-file-select="" uploader="SubirdorArchivos" multiple  /><br/>
+
+    <li ng-repeat="item in SubirdorArchivos.queue">
+          <!-- nombre del archivo -->
+          Archivo: <span ng-bind="item.file.name"></span><br/>
+          <!-- imagen del archivo -->
+          <div ng-show="SubirdorArchivos.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+      
+        
+          <!-- boton cancel -->            
+          <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">
+            <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+          </button>
+
+          <!-- boton remove -->
+          <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+            <span class="glyphicon glyphicon-trash"></span> Remove
+          </button>
+        </li>  
+        <img  ng-if="SubirdorArchivos.queue==0" ng-src="{{local.foto_local}}" class="fotoform" id="foto" />
+            </div>
+<br>
+       <center><button  name="guardar" ng-disabled="FormIngreso.$invalid"  ng-click="Guardar()" ></span>Guardar</a> 
+          
+        <input type="hidden" value="" id="idParaModificar" name="agregar" />
+        <input type="hidden" value="" id="hdnAgregar" name="agregar" />
+           
+   
+
+          </form>  
+        </div> 
+      </div>  
+    </div>
+  </div>
+
+</div>
+    <div class="sidebar">
+    </div>
+  </div>
+  <div id="footer">
+    <div>
+      <ul>
+        <li class="first">
+          <h2>Delivery</h2>
+          <h3>Cel 0-123-456-789</h3>
+          <ul>
+            <li>
+              <a href="http://www.freewebsitetemplates.com/go/facebook" class="facebook"></a>
+            </li>
+            <li>
+              <a href="http://www.freewebsitetemplates.com/go/twitter" class="twitter"></a>
+            </li>
+            <li>
+              <a href="http://www.freewebsitetemplates.com/go/googleplus" class="googleplus"></a>
+            </li>
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+

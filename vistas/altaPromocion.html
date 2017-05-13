@@ -1,0 +1,92 @@
+<link href="css/estilos-log.css" rel="stylesheet" type="text/css" media="all" />
+
+  <title>Ingresar - Argenta</title>
+  <meta charset="utf-8">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+
+  <div id="header">
+    <div>
+      <a ui-sref="inicio"><img class="logo" src="images/logoArgenta.png" width="513" height="84" alt="" title=""></a>
+      <a ui-sref="inicio"><img  src="images/800px-Eq_it-na_pizza-margherita_sep2005_sml-2.png" width="332" height="205" alt="" title=""></a>
+
+<div ng-if="user.rol == 'EMPLEADO'" >
+<ul class="navigation"> 
+    <li><a ui-sref="menu.Registro">Alta Cliente</a></li>
+    <li><a ui-sref="menu.AltaProducto">Alta Producto</a></li>
+    <li><a ui-sref="menu.AltaPromocion">Alta Promocion</a></li>
+    <li><a ui-sref="menu.altaPedidos">Alta Pedido</a></li>
+     <li><a ui-sref="menu.Grillas">Grilla Clientes </a></li>
+    <li><a ui-sref="menu.grillaPedidos" >Grilla Pedidos</a></li>
+    <li><a ng-Click="Deslogueo()">Desloguearse</a></li>
+
+</div>
+
+
+
+<div ng-if="user.rol == 'ENCARGADO'" >
+<ul class="navigation"> 
+    <li><a ui-sref="menu.Registro">Alta Clientes y Empleados</a></li>
+    <li><a ui-sref="menu.AltaProducto">Alta Productos</a></li>
+    <li><a ui-sref="menu.AltaPromocion">Alta Promocion</a></li>
+    <li><a ui-sref="menu.altaPedidos">Alta Pedido</a></li>
+    <li><a ui-sref="menu.Grillas">Grilla Clientes y Empleados</a></li>
+    <li><a ng-Click="Deslogueo()">Desloguearse</a></li>
+
+</div>
+    </div>
+  </div>
+
+
+<div class="login-form">  
+      <div class="agile-row">   
+        <div class="login-agileits-top"> 
+          <form onsubmit="return false" method="post"> 
+            <div class="input-row">
+
+ Pizza <select ng-model="objeSeleccionadoPizza" ng-options="pizza as pizza.descripcion_pizza for pizza in listapizzas track by pizza.id_pizza">
+        <option value="">* Elige Una Pizza *</option>
+      </select><br><br>
+     Local <select ng-model="objeSeleccionadoLocal" ng-options="pizza as pizza.nombre_local for pizza in listalocales track by pizza.id_local">
+        <option value="">* Elige Un Local *</option>
+      </select><br><br>
+       <input type="text" value="" placeholder="ingrese precio de la promocion" ng-model="promocion.precio_promo" required />
+      
+           </div><br>
+       <center><button  name="guardar" ng-disabled="FormIngreso.$invalid"  ng-click="Guardar()" ></span>Guardar</a> 
+          
+        <input type="hidden" value="" id="idParaModificar" name="agregar" />
+        <input type="hidden" value="" id="hdnAgregar" name="agregar" />
+         </center>
+
+          </form>  
+        </div> 
+      </div>  
+    </div>
+  </div>
+
+</div>
+    <div class="sidebar">
+    </div>
+  </div>
+  <div id="footer">
+    <div>
+      <ul>
+        <li class="first">
+          <h2>Delivery</h2>
+          <h3>Cel 0-123-456-789</h3>
+          <ul>
+            <li>
+              <a href="http://www.freewebsitetemplates.com/go/facebook" class="facebook"></a>
+            </li>
+            <li>
+              <a href="http://www.freewebsitetemplates.com/go/twitter" class="twitter"></a>
+            </li>
+            <li>
+              <a href="http://www.freewebsitetemplates.com/go/googleplus" class="googleplus"></a>
+            </li>
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>

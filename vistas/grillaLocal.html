@@ -1,0 +1,60 @@
+
+
+
+  <meta charset="utf-8">
+
+
+  <div id="header">
+    <div>
+      <a ui-sref="inicio"><img class="logo" src="images/logoArgenta.png" width="513" height="84" alt="" title=""></a>
+      <a ui-sref="inicio"><img  src="images/800px-Eq_it-na_pizza-margherita_sep2005_sml-2.png" width="332" height="205" alt="" title=""></a>
+              <link href="css/style.css" rel="stylesheet" type="text/css">
+
+ 
+<div ng-if="user.rol == 'ADMINISTRADOR'" >
+<ul class="navigation">    
+    <li><a ui-sref="menu.ABM">Alta Usuario</a></li>
+    <li><a ui-sref="menu.AltaLocal">Alta Local</a></li>
+    <li><a ui-sref="menu.Grillas">Grilla Usuarios</a></li>
+     <li><a ui-sref="menu.GrillaLocal" >Grilla Locales</a></li>
+     <li><a ng-Click="Deslogueo()">Desloguearse</a></li>
+</div>
+
+
+<div ng-if="user.rol != 'ADMINISTRADOR'" >
+<ul class="navigation">    
+      <li><a ui-sref="menu.GrillaLocal">Locales</a></li>
+      <li><a ui-sref="menu.GrillaPromociones">Promociones</a></li>
+    <li><a ui-sref="menu.altaPedidos" >Pedidos</a></li>
+           <li><a ng-Click="Deslogueo()">Desloguearse</a></li>
+      </ul>
+</div>
+
+<br>
+<br>
+
+    <div ui-grid="gridOptions" class="myGrid" 
+    ui-grid-pagination
+    ui-grid-resize-columns
+     ui-grid-cellNav 
+    ui-grid-edit 
+    ui-grid-row-edit
+
+
+
+    >
+    </div>
+
+ 
+         <div zoom="2"
+         ng-if="map=='hola'">
+    <ng-map center="[{{lat}}, {{log}}]" >
+    <marker   position ="[{{lat}}, {{log}}]"  animation="Animation.DROP" ></marker>
+    </ng-map>
+  </div>
+
+   
+  </div>
+     
+
+  
